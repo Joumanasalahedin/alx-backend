@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 """LRU Cache"""
-
 from base_caching import BaseCaching
 
 
@@ -43,7 +42,6 @@ class LRUCache(BaseCaching):
         """
         if key is None or key not in self.cache_data:
             return None
-        # Update the order since this key was recently used
         self.order.remove(key)
         self.order.append(key)
         return self.cache_data.get(key)
