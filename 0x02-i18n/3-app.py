@@ -4,7 +4,7 @@ Flask app with Babel and template translations
 """
 
 from flask import Flask, render_template, request
-from flask_babel import Babel, _
+from flask_babel import Babel
 
 
 class Config:
@@ -18,7 +18,7 @@ class Config:
 
 app = Flask(__name__)
 app.config.from_object(Config)
-
+app.url_map.strict_slashes = False
 babel = Babel(app)
 
 
@@ -31,7 +31,7 @@ def get_locale() -> str:
 
 
 @app.route('/')
-def index():
+def index() -> str:
     """
     Basic route for the application.
     """
