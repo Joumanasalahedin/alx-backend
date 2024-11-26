@@ -18,7 +18,6 @@ class Config:
 
 app = Flask(__name__)
 app.config.from_object(Config)
-app.url_map.strict_slashes = False
 babel = Babel(app)
 
 
@@ -31,7 +30,7 @@ def get_locale() -> str:
 
 
 @app.route('/')
-def index() -> str:
+def index():
     """
     Basic route for the application.
     """
