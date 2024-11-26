@@ -4,7 +4,7 @@ Flask app with user login simulation
 """
 
 from flask import Flask, g, render_template, request
-from flask_babel import Babel, _
+from flask_babel import Babel
 
 users = {
     1: {"name": "Balou", "locale": "fr", "timezone": "Europe/Paris"},
